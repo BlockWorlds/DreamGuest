@@ -37,6 +37,11 @@ public class BorderHandler {
 			borderFolder.mkdirs();
 		}
 		readBorders(BORDER_FILE);
+		saveBorders(getBorderFile());
+	}
+	
+	public static void save(){
+		saveBorders(getBorderFile());
 	}
 	
 	public static boolean addBorder(Border b){
@@ -46,11 +51,7 @@ public class BorderHandler {
 			}
 		}
 		worlds.add(b.getWorldID());
-		boolean success = borders.add(b);
-		if(success){
-			saveBorders(getBorderFile());
-			return true;
-		}
+		borders.add(b);
 		return false;
 	}
 	

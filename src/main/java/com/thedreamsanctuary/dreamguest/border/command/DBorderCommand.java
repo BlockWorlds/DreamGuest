@@ -87,6 +87,7 @@ class Create extends Argument{
         }
         Border newBorder = new Border(args[0], x1, z1, x2, z2, player.getWorld().getUID());
         BorderHandler.addBorder(newBorder);
+        BorderHandler.save();
         player.sendMessage(ChatColor.GRAY + "Zone successfully created!");
         Bukkit.getLogger().info("Player created border " + newBorder);
 	}
@@ -112,6 +113,7 @@ class Delete extends Argument{
 		if(oldBorder != null){
 			BorderHandler.removeBorder(oldBorder);
 			player.sendMessage(ChatColor.GRAY + "Zone sucessfully removed");
+			BorderHandler.save();
 			Bukkit.getLogger().info("Player removed border " + oldBorder);
 		}else{
 			player.sendMessage(ChatColor.GREEN + "Incorrect parameters " + ChatColor.GRAY + this.getUsage());
@@ -155,6 +157,7 @@ class Edit extends Argument{
             }
 			BorderHandler.removeBorder(oldBorder);
 			BorderHandler.addBorder(new Border(borderName, x1, z1, x2, z2, worldID));
+			BorderHandler.save();
 			player.sendMessage(ChatColor.GRAY + "Zone sucessfully edited");
 			Bukkit.getLogger().info("Player edited zone " + oldBorder.getName() + ", it is now " + BorderHandler.getBorder(oldBorder.getName()));
 		}else{
