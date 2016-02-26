@@ -26,6 +26,11 @@ public class BanHandler {
 			banFolder.mkdirs();
 		}
 		readBans(getBanFile());
+		save();
+	}
+	
+	public static void save(){
+		saveBans(getBanFile());
 	}
 	
 	public static boolean addBan(Ban b){
@@ -35,11 +40,7 @@ public class BanHandler {
 			}
 		}
 		boolean success = bans.add(b);
-		if(success){
-			saveBans(getBanFile());
-			return true;
-		}
-		return false;
+		return success;
 	}
 	
 	
@@ -198,7 +199,7 @@ public class BanHandler {
 			return false;
 		}
 		removeBan(getBan(playerUUID));
-		saveBans(getBanFile());
+		save();
 		return true;
 	}
 	/**

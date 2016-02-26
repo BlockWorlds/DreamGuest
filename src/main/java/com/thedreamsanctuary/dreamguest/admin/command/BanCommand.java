@@ -58,6 +58,7 @@ public class BanCommand extends CommandHandler{
 		}
 		Ban b = new Ban(playerUUID, target, sender.getName(), reason);
 		if(BanHandler.addBan(b)){
+			BanHandler.save();
 			if(player != null){
 				player.kickPlayer(reason);
 			}
