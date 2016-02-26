@@ -23,7 +23,6 @@ public class UnbanCommand extends CommandHandler implements TabCompleter{
 		super(m);
 	}
 	
-	@Override
 	public List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
 		if(cmd.getName().equalsIgnoreCase("unban") && args.length == 1){
 			if(sender instanceof Player){
@@ -33,7 +32,6 @@ public class UnbanCommand extends CommandHandler implements TabCompleter{
 		return new ArrayList<String>();
 	}
 	
-	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		if(args.length != 1){
 			return false;

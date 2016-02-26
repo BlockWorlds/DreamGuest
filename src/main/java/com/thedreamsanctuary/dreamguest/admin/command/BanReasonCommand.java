@@ -17,7 +17,6 @@ public class BanReasonCommand extends CommandHandler{
 		super(m);
 	}
 
-	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		if(args.length != 1){
 			return false;

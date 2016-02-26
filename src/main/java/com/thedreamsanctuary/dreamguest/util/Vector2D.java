@@ -486,7 +486,6 @@ public class Vector2D implements Cloneable, ConfigurationSerializable
         return this;
     }
 
-    @Override
     public Map<String, Object> serialize()
     {
         final Map<String, Object> result = new LinkedHashMap<String, Object>();

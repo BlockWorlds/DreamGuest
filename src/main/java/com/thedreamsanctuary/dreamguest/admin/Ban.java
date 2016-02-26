@@ -40,7 +40,6 @@ public class Ban implements Comparable<Ban>, Serializable{
 		return when;
 	}
 
-	@Override
 	public int compareTo(Ban o) {
 		if(this.getWhen().before(o.getWhen())){
 			return -1;

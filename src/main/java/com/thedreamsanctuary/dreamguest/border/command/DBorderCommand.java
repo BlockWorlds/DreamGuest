@@ -32,7 +32,6 @@ public class DBorderCommand extends CommandHandler implements TabCompleter{
 		player.sendMessage(ChatColor.RED + "Usage: " + usage);
 	}
 	
-	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
 		if(!(sender instanceof Player)){
 			sender.sendMessage("Must be ingame to use!");
@@ -53,7 +52,6 @@ public class DBorderCommand extends CommandHandler implements TabCompleter{
 		return true;
 	}
 
-	@Override
 	public java.util.List<String> onTabComplete(CommandSender sender, Command cmd, String alias, String[] args) {
 		java.util.List<String> output = new ArrayList<String>();
 		output.addAll(arguments.keySet());

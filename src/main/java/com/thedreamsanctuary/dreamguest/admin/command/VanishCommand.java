@@ -22,7 +22,6 @@ public class VanishCommand extends CommandHandler{
 		super(m);
 	}
 
-	@Override
 	public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args){
 		if(!(sender instanceof Player)){
 			sender.sendMessage("Only players may execute this command.");
