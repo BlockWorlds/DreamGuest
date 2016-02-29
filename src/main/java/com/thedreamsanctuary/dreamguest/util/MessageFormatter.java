@@ -6,12 +6,12 @@ import org.bukkit.entity.Player;
 
 
 public class MessageFormatter {
-	private static String playerplaceholder = "${n}";
-	private static String playercountplaceholder = "${no}";
-	private static String playercountmin1placeholder = "${no-1}";
-	private static String adminplaceholder = "${admin}";
-	private static String reasonplaceholder = "${reason}";
-	private static String messageplaceholder = "${message}";
+	private static final String playerplaceholder = "${n}";
+	private static final String playercountplaceholder = "${no}";
+	private static final String playercountmin1placeholder = "${no-1}";
+	private static final String adminplaceholder = "${admin}";
+	private static final String reasonplaceholder = "${reason}";
+	private static final String messageplaceholder = "${message}";
 	
 	public static String formatJoinLeaveMessage(String format, Player player){
 		format = applyColours(format);
