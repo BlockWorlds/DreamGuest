@@ -24,14 +24,20 @@ public class BanReasonCommand extends CommandHandler{
 		String target = args[0];
 		//check if argument is UUID and execute fitting method
 		if(target.matches("[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}")){
-			getReasonByUUID(sender, UUID.fromString(target));
+			getReasonByUUID(sender, UUID.fromString(target), null);
 		}else{
 			getReasonByName(sender, target);
 		}
 		return true;
 	}
 	
-	public void getReasonByUUID(CommandSender sender, UUID playerUUID){
+	public void getReasonByUUID(CommandSender sender, UUID playerUUID, String playerName){
+		//is the player even banned?
+		if(!BanHandler.isPlayerBanned(playerUUID)){			
+			sender.sendMessage(MessageFormatter.formatPlayerNotBannedMessage(pl.getConfig().getString("admin-player-not-banned-message"), ((playerName != null)?playerName:playerUUID.toString())));
+			return;
+		}
+		
 		//retrieve banreason by UUID
 		String reason = BanHandler.getPlayerBanreason(playerUUID);
 		String name = BanHandler.getBannedPlayerName(playerUUID);
@@ -42,7 +48,7 @@ public class BanReasonCommand extends CommandHandler{
 		try {
 			//try getting player's UUID, if succeeds, get reason by UUID
 			UUID playerUUID = UUIDFetcher.getUUIDOf(target);
-			getReasonByUUID(sender, playerUUID);
+			getReasonByUUID(sender, playerUUID, "target");
 		} catch (Exception e) {
 			sender.sendMessage(ChatColor.RED + "Playername could either not be converted to UUID or he is not banned. He may have changed names, please try the UUID directly.");
 			return;

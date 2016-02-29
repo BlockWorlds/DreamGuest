@@ -45,7 +45,7 @@ public class UnbanCommand extends CommandHandler implements TabCompleter{
 			b = BanHandler.getBan(target);
 		}
 		if(b == null){
-			sender.sendMessage(ChatColor.RED + "That player is not banned.");
+			sender.sendMessage(MessageFormatter.formatPlayerNotBannedMessage(pl.getConfig().getString("admin-player-not-banned-message"), target));
 			return true;
 		}
 		Bukkit.broadcastMessage(MessageFormatter.formatKickBanMessage(pl.getConfig().getString("admin-unban-message"), sender.getName(), b.getName(), ""));

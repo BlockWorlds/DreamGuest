@@ -25,6 +25,7 @@ admin-kick-message: "&8Player &c${n}&8 has been kicked by &c${admin}&8 for: &9${
 admin-ban-message: "&8Player &c${n}&8 has been banned by &c${admin}&8 for: &9${reason}"
 admin-unban-message: "&8Player &c${n}&8 has been unbanned by &c${admin}"
 admin-banreason-message: "&8Player &c${n}&8 was banned for the reason: &9${reason}"
+admin-player-not-banned-message:"&8Player &c{n}&8 is not banned!"
 default-reason: asshat
 
 # --------------------------------------------

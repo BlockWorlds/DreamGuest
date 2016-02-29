@@ -31,6 +31,11 @@ public class MessageFormatter {
 		return format.replace(playerplaceholder, player.getDisplayName()).replace(messageplaceholder, message);
 	}
 	
+	public static String formatPlayerNotBannedMessage(String format, String player){
+		format = applyColours(format);
+		return format.replace(playerplaceholder, player);
+	}
+	
 	public static String applyColours(String s){
 		s = ChatColor.translateAlternateColorCodes('&', s);
 		return s;
