@@ -9,4 +9,7 @@ public abstract class CommandHandler implements CommandExecutor{
 		this.m = m;
 		this.pl = m.getPlugin();
 	}
+	protected Module getModule(){
+		return this.m;
+	}
 }

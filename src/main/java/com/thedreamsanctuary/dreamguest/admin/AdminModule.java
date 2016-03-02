@@ -5,6 +5,7 @@ import com.thedreamsanctuary.dreamguest.Module;
 import com.thedreamsanctuary.dreamguest.admin.command.BanCommand;
 import com.thedreamsanctuary.dreamguest.admin.command.BanReasonCommand;
 import com.thedreamsanctuary.dreamguest.admin.command.KickCommand;
+import com.thedreamsanctuary.dreamguest.admin.command.ReloadCommand;
 import com.thedreamsanctuary.dreamguest.admin.command.UnbanCommand;
 import com.thedreamsanctuary.dreamguest.admin.command.VanishCommand;
 import com.thedreamsanctuary.dreamguest.admin.handlers.BanHandler;
@@ -30,6 +31,7 @@ public class AdminModule extends Module{
 		addCommand("banreason", new BanReasonCommand(this));
 		addCommand("kick", new KickCommand(this));
 		addCommand("vanish", new VanishCommand(this));
+		addCommand("dgreload", new ReloadCommand(this));
 		addListener(new ConnectionEventListener());
 		addListener(new PlayerEventListener());
 	}

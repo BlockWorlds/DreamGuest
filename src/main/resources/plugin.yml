@@ -41,3 +41,7 @@ commands:
     usage: /<command> <create|edit|delete|list> [arguments]
     permission: dreamguest.border.manage
     description: manage a border
+  dgreload:
+    usage: /<command>
+    permission: dreamguest.reload
+    description: reloads the plugin config
